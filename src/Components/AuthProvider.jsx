@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import {  GoogleAuthProvider } from "firebase/auth/cordova";
+import {  GoogleAuthProvider } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebaseConfig";
 import { toast } from "react-toastify";

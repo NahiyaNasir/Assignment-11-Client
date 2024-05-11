@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 
@@ -43,15 +43,63 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
+    <li>
+    <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? " text-orange-400 underline "
+                  : "font-bold  p-2 "
+              }
+            >
+             Home
+            </NavLink>
+    </li>
+    <li>
+    <NavLink
+              to="/need"
+              className={({ isActive }) =>
+                isActive
+                  ? " text-orange-400 underline "
+                  : "font-bold  p-2 "
+              }
+            >
+            Need Volunteer
+            </NavLink>
+    </li>
      
-      <li><a>Need Volunteer</a></li>
+     
+     
       <li>
         <details>
           <summary>My Profile</summary>
-          <ul className="p-2 text-white bg-slate-900 z-50">
-            <li><a>Add Volunteer</a></li>
-            <li><a>My Post</a></li>
+          <ul className="p-2">
+            {/* <li><a>Add Volunteer</a></li>
+            <li><a>My Post</a></li> */}
+           <li>
+           <NavLink
+              to="/add"
+              className={({ isActive }) =>
+                isActive
+                  ? " text-orange-400 underline "
+                  : "font-bold  p-2 "
+              }
+            >
+              Add Volunteer
+            </NavLink>
+           </li>
+            <li>
+            <NavLink
+              to="/myPost"
+              className={({ isActive }) =>
+                isActive
+                  ? "   text-orange-400 underline  "
+                  : "font-bold  p-2 "
+              }
+            >
+             My Post
+            </NavLink>
+            </li>
           </ul>
         </details>
       </li>
