@@ -7,6 +7,7 @@ import Main from "../Components/Main";
 import NeedVolinteer from "../Components/NeedVolinteer";
 import Register from "../Components/Pages/Register";
 import AddPost from "../Components/AddPost";
+import Details from "../Components/Pages/Details";
 
 const router = createBrowserRouter([
     {
@@ -27,15 +28,18 @@ const router = createBrowserRouter([
           {
             path: "need",
             element:<NeedVolinteer></NeedVolinteer> ,
+            loader:()=>fetch('http://localhost:5000/volunteer')
           },
           {
             path: "add",
             element:<AddPost></AddPost> ,
           },
           {
-            path: "myPost",
-            element:<NeedVolinteer></NeedVolinteer> ,
+            path: "/details/:id",
+            element:<Details></Details> ,
+            loader:({params})=>fetch(`http://localhost:5000/volunteer/${params.id}`)
           },
+          
         ],
       },
   ]);

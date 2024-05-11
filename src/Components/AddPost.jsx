@@ -18,7 +18,7 @@ const AddPost = () => {
     const img = from.img.value;
     const desc = from.desc.value;
     const title = from.title.value;
-    const number = from.number.value;
+    const number = parseInt(from.number.value)
    
     const newItem = {
       name,
@@ -58,9 +58,9 @@ const AddPost = () => {
 
   return (
     <div>
-      <div className=" bg-[#F4F3F0] p-24 my-6 mx-auto font-mono">
+      <div className="bg-sky-800 p-24 my-6 mx-auto font-mono">
         <h1 className=" text-center font-sans text-6xl mb-5 text-gray-300">
-          Add Arts & Crafts Items
+          Add Volunteer
         </h1>
 
         <form onSubmit={handleAddItem}>
@@ -112,7 +112,7 @@ const AddPost = () => {
               </div>
               <input
                 type="text"
-                placeholder="Post Title<"
+                placeholder="Post Title"
                 name="title"
                 className="input input-bordered w-full "
               />
@@ -190,7 +190,7 @@ const AddPost = () => {
             </label>
           </div>
 
-          <input type="submit" value="Add " className="btn btn-block" />
+          <input type="submit" value="Add " className="btn btn-block " />
         </form>
       </div>
     </div>

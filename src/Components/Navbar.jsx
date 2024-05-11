@@ -57,7 +57,7 @@ const Navbar = () => {
     </li>
     <li>
     <NavLink
-              to="/need"
+              to="need"
               className={({ isActive }) =>
                 isActive
                   ? " text-orange-400 underline "
@@ -74,11 +74,10 @@ const Navbar = () => {
         <details>
           <summary>My Profile</summary>
           <ul className="p-2">
-            {/* <li><a>Add Volunteer</a></li>
-            <li><a>My Post</a></li> */}
+           
            <li>
            <NavLink
-              to="/add"
+              to="add"
               className={({ isActive }) =>
                 isActive
                   ? " text-orange-400 underline "
@@ -90,7 +89,7 @@ const Navbar = () => {
            </li>
             <li>
             <NavLink
-              to="/myPost"
+              to="myPost"
               className={({ isActive }) =>
                 isActive
                   ? "   text-orange-400 underline  "
