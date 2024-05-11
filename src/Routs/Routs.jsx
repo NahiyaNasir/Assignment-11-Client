@@ -6,6 +6,7 @@ import Main from "../Components/Main";
 
 import NeedVolinteer from "../Components/NeedVolinteer";
 import Register from "../Components/Pages/Register";
+import AddPost from "../Components/AddPost";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,14 @@ const router = createBrowserRouter([
          
           {
             path: "need",
+            element:<NeedVolinteer></NeedVolinteer> ,
+          },
+          {
+            path: "add",
+            element:<AddPost></AddPost> ,
+          },
+          {
+            path: "myPost",
             element:<NeedVolinteer></NeedVolinteer> ,
           },
         ],
