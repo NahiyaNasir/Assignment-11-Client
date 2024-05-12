@@ -25,7 +25,7 @@ const AddPost = () => {
       email,
       category,
       location,
-      deadline,
+      deadline ,
       img,
       title,
       desc,
@@ -58,10 +58,8 @@ const AddPost = () => {
 
   return (
     <div>
-      <div className="bg-sky-800 p-24 my-6 mx-auto font-mono">
-        <h1 className=" text-center font-sans text-6xl mb-5 text-gray-300">
-          Add Volunteer
-        </h1>
+      <div className="p-24 glass my-6 mx-auto font-mono  " >
+        
 
         <form onSubmit={handleAddItem}>
           {/*  from row 1 */}
@@ -76,7 +74,7 @@ const AddPost = () => {
                 name="name"
                 defaultValue={user?.displayName}
                 readOnly
-                className="input input-bordered w-full "
+                className="input input-bordered w-full input-success"
               />
             </label>
             <label className="form-control md:w-1/2 mr-4">
@@ -89,7 +87,7 @@ const AddPost = () => {
                 readOnly
                 name="email"
                 defaultValue={user?.email}
-                className="input input-bordered w-full "
+                className="input input-bordered w-full input-accent"
               />
             </label>
             {/* from row 2 */}
@@ -103,7 +101,7 @@ const AddPost = () => {
                 type="text"
                 placeholder="Thumbnail"
                 name="img"
-                className="input input-bordered w-full "
+                className="input input-bordered w-full input-info "
               />
             </label>
             <label className="form-control md:w-1/2">
@@ -114,7 +112,7 @@ const AddPost = () => {
                 type="text"
                 placeholder="Post Title"
                 name="title"
-                className="input input-bordered w-full "
+                className="input input-bordered w-full input-primary "
               />
             </label>
           </div>
@@ -125,7 +123,7 @@ const AddPost = () => {
                 <span className="label-text">Category</span>
               </div>
               <select
-                className="select select-bordered w-full  "
+                className="select select-bordered w-full select-warning "
                 name="category"
               >
                 <option value="subcategory Names">Category</option>
@@ -136,7 +134,7 @@ const AddPost = () => {
               </select>
             </label>
 
-            <label className="form-control md:w-1/2">
+            <label className="form-control md:w-full">
               <div className="label">
                 <span className="label-text"> Description</span>
               </div>
@@ -144,7 +142,7 @@ const AddPost = () => {
                 type="text"
                 placeholder="Short Description"
                 name="desc"
-                className="input input-bordered w-full  textarea"
+                className="input input-bordered w-full input-primary "
               />
             </label>
           </div>
@@ -157,7 +155,7 @@ const AddPost = () => {
                 type="text"
                 placeholder="location"
                 name="location"
-                className="input input-bordered w-full "
+                className="input input-bordered w-full input-secondary  "
               />
             </label>
             <label className="form-control md:w-1/2">
@@ -168,7 +166,7 @@ const AddPost = () => {
                 type="number"
                 placeholder="Number of Volunteer"
                 name="number"
-                className="input input-bordered w-full "
+                className="input input-bordered w-full  input-accent"
               />
             </label>
           </div>
@@ -179,18 +177,12 @@ const AddPost = () => {
                 <span className="label-text">Deadline</span>
               
               </div>
-              <DatePicker   className="input input-bordered w-full" selected={startDate} onChange={(date) => setStartDate(date)} name="deadline" />
-              {/* <input
-                type="text"
-                placeholder="Deadline"
-                name="deadline"
-                className="input input-bordered w-full "
-               
-              /> */}
+              <DatePicker   className="input input-bordered input-info w-full" selected={startDate} onChange={(date) => setStartDate(date)} name="deadline" />
+            
             </label>
           </div>
 
-          <input type="submit" value="Add " className="btn btn-block " />
+          <input type="submit" value="Add " className="btn btn-block  input-success " />
         </form>
       </div>
     </div>

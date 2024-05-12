@@ -8,6 +8,7 @@ import NeedVolinteer from "../Components/NeedVolinteer";
 import Register from "../Components/Pages/Register";
 import AddPost from "../Components/AddPost";
 import Details from "../Components/Pages/Details";
+import BeVolunteer from "../Components/Pages/BeVolunteer";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
             path: "/details/:id",
             element:<Details></Details> ,
             loader:({params})=>fetch(`http://localhost:5000/volunteer/${params.id}`)
+          },
+          {
+            path: "/beVolunteer/:id",
+            element:<BeVolunteer></BeVolunteer> ,
+            loader:({params})=>fetch(`http://localhost:5000/volunteer/${params.id}`)
+           
           },
           
         ],
