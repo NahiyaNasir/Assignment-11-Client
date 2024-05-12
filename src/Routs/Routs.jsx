@@ -9,6 +9,8 @@ import Register from "../Components/Pages/Register";
 import AddPost from "../Components/AddPost";
 import Details from "../Components/Pages/Details";
 import BeVolunteer from "../Components/Pages/BeVolunteer";
+import MyPost from "../Components/Pages/MyPost";
+import ProtectedRoute from "../Components/ProtectedRoute";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
           {
             path: "need",
             element:<NeedVolinteer></NeedVolinteer> ,
-            loader:()=>fetch('http://localhost:5000/volunteer')
+            loader:()=>fetch('https://assigment-11-server-two.vercel.app/volunteer')
           },
           {
             path: "add",
@@ -37,16 +39,19 @@ const router = createBrowserRouter([
           },
           {
             path: "/details/:id",
-            element:<Details></Details> ,
-            loader:({params})=>fetch(`http://localhost:5000/volunteer/${params.id}`)
+            element:<ProtectedRoute><Details></Details></ProtectedRoute> ,
+            loader:({params})=>fetch(`https://assigment-11-server-two.vercel.app/volunteer/${params.id}`)
           },
           {
             path: "/beVolunteer/:id",
             element:<BeVolunteer></BeVolunteer> ,
-            loader:({params})=>fetch(`http://localhost:5000/volunteer/${params.id}`)
+            loader:({params})=>fetch(`https://assigment-11-server-two.vercel.app/volunteer/${params.id}`)
            
           },
-          
+          {
+            path: "myPost",
+            element:<ProtectedRoute><MyPost></MyPost></ProtectedRoute> ,
+          },
         ],
       },
   ]);

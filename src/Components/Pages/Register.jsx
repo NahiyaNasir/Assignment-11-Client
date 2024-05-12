@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, } from "react";
 import { AuthContext } from "../AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from "react-toastify";
@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 
 
 const Register = () => {
-    const { createUser, updateUser } = useContext(AuthContext);
-    const [registerSuccess, setSuccess] = useState("");
-  const [registerError, setRegisterError] = useState("");
+    const { createUser, updateUser,user,setUser } = useContext(AuthContext);
+   
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -19,24 +18,29 @@ const Register = () => {
     const password = form.get("password");
     console.log(name,password,photoUrl,email);
     if (password.length < 6) {
-      setRegisterError("password should be at least 6 character");
+   
+    toast.error('password should be at least 8 character')
       return;
     }
     if (!/[A-Z]/.test(password)) {
-      setRegisterError("password should be at least one upper case");
+    
+      toast.error('password should be at least one upper case')
       return;
     }
     if (!/[a-z]/.test(password)) {
-      setRegisterError("password should be at least one lower case");
+      
+      toast.error('password should be at least one lower case')
       return;
     }
 
-    setSuccess("");
-    setRegisterError("");
+   
     createUser(email, password)
       .then(() => {
-        updateUser(name, photoUrl).then(() => {
-          // window.location.href = "/";
+        updateUser(name, photoUrl)
+        // setUser({...user,photo:photoUrl, displayName:name})
+        // console.log(setUser)
+        .then(() => {
+         
          
           Swal.fire({
             title: 'Success!',
@@ -117,12 +121,12 @@ const Register = () => {
               <span className="underline text-teal-400">Here</span>
             </Link>
           </p>
-          {registerError && (
+          {/* {registerError && (
             <p className=" text-red-700 mb-6 mx-6">{registerError}</p>
-          )}
-          {registerSuccess && (
+          )} */}
+          {/* {registerSuccess && (
             <p className="text-green-400 mb-6 mx-6">{registerSuccess}</p>
-          )}
+          )} */}
         </div>
       </div>
         </div>

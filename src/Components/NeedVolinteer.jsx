@@ -5,18 +5,19 @@ import Card from "./Card";
 
 const NeedVolinteer = () => {
   const need = useLoaderData();
+  console.log(need)
  
   // const [search, setSearch ] = useState("");
   // // useEffect(()=>{
   //   const getData=async ()=>{
   //     const {data}=await axios(
-  //      ` http://localhost:5000/volunteer?search=${search}`
+  //      ` https://assigment-11-server-two.vercel.app/volunteer?search=${search}`
   //     )
   //   }
   // },[])
 
   // useEffect(()=>{
-  //   axios.get(`http://localhost:5000/volunteer?search=${search}`,{
+  //   axios.get(`https://assigment-11-server-two.vercel.app/volunteer?search=${search}`,{
   //     withCredentials:true
   //   })
   //   .then(res=>{

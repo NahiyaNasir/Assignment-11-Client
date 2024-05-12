@@ -8,10 +8,11 @@ import Swal from "sweetalert2";
 
 const BeVolunteer = () => {
     const be=useLoaderData()
-    console.log(be)
+    // console.log(be)
     const {desc,title,img,deadline,location,category,requested,number}=be
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
+    console.log(user)
    const  handleRequested=e=>{
     e.preventDefault();
     const from = e.target;
@@ -39,9 +40,9 @@ const BeVolunteer = () => {
       number,
       suggest,
     };
-    console.log(reqItem)
+    // console.log(reqItem)
 
-    fetch('http://localhost:5000/requested',{
+    fetch('https://assigment-11-server-two.vercel.app/requested',{
         method:'post',
         headers:{
             'content-type':'application/json'
@@ -80,6 +81,7 @@ const BeVolunteer = () => {
                 placeholder="Post Title"
                 name="title"
                 defaultValue={title}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -92,6 +94,7 @@ const BeVolunteer = () => {
                 placeholder="Description"
                 name="desc"
                 defaultValue={desc}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -103,6 +106,7 @@ const BeVolunteer = () => {
                 className="select select-bordered w-full select-warning "
                 name="category"
                 defaultValue={category}
+                readOnly
               >
                 <option value="subcategory Names">Category</option>
                 <option value="health"> Health</option>
@@ -121,6 +125,7 @@ const BeVolunteer = () => {
                 placeholder="location"
                 name="location"
                 defaultValue={location}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -133,6 +138,7 @@ const BeVolunteer = () => {
                 placeholder="Status"
                 name="requested"
                 defaultValue={requested}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -142,7 +148,7 @@ const BeVolunteer = () => {
         <div className="label">
                 <span className="label-text">Deadline</span>
               </div>
-              <DatePicker   className="input input-bordered input-info w-full" selected={startDate} onChange={(date) => setStartDate(date)} name="deadline" defaultValue={deadline} />
+              <DatePicker   className="input input-bordered input-info w-full" selected={startDate} onChange={(date) => setStartDate(date)} name="deadline" defaultValue={deadline} readOnly />
             </label>
        <label className="form-control  md:w-1/2">
         <div className="label">
@@ -168,6 +174,7 @@ const BeVolunteer = () => {
                 placeholder="Organizer"
                 name="name"
                 defaultValue={user?.displayName}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -177,9 +184,10 @@ const BeVolunteer = () => {
               </div>
               <input
                 type="email"
-                placeholder="Post Title"
+                placeholder="Organizer Email"
                 name="email"
                 defaultValue={user?.email}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -194,6 +202,7 @@ const BeVolunteer = () => {
                 placeholder="Volunteer Name"
                 name="name"
                 defaultValue={user?.displayName}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -206,6 +215,7 @@ const BeVolunteer = () => {
                 placeholder="Volunteer Email"
                 name="email"
                 defaultValue={user?.email}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -222,6 +232,7 @@ const BeVolunteer = () => {
                 placeholder="Thumbnail"
                 name="img"
                 defaultValue={img}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>
@@ -234,6 +245,7 @@ const BeVolunteer = () => {
                 placeholder="Number of Volunteer"
                 name="number"
                 defaultValue={number}
+                readOnly
                 className="input input-bordered w-full input-primary "
               />
             </label>

@@ -32,7 +32,7 @@ const AddPost = () => {
       number,
     };
     console.log(newItem)
-    fetch('http://localhost:5000/volunteer',{
+    fetch('https://assigment-11-server-two.vercel.app/volunteer',{
         method:'post',
         headers:{
             'content-type':'application/json'

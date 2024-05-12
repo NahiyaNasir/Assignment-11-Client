@@ -89,14 +89,14 @@ const Navbar = () => {
            </li>
             <li>
             <NavLink
-              to="myPost"
+              to="/myPost"
               className={({ isActive }) =>
                 isActive
                   ? "   text-orange-400 underline  "
                   : "font-bold  p-2 "
               }
             >
-             My Post
+             My Post 
             </NavLink>
             </li>
           </ul>
