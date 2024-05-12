@@ -1,5 +1,6 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
+import NeedPost from "../NeedPost";
 
 const MyPost = () => {
     return (
@@ -11,7 +12,7 @@ const MyPost = () => {
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+      <NeedPost></NeedPost>
     </TabPanel>
     <TabPanel>
       <h2>Any content 2</h2>

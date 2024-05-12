@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const BeVolunteer = () => {
     const be=useLoaderData()
     // console.log(be)
-    const {desc,title,img,deadline,location,category,requested,number}=be
+    const {desc,title,img,deadline,location,category,number}=be
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
     console.log(user)
@@ -27,6 +27,7 @@ const BeVolunteer = () => {
     const title = from.title.value;
     const suggest=from.suggest.value
     const number = parseInt(from.number.value)
+//    const requested=from.requested.value
    
     const reqItem = {
       name,
@@ -39,6 +40,7 @@ const BeVolunteer = () => {
       desc,
       number,
       suggest,
+    //   requested,
     };
     // console.log(reqItem)
 
@@ -137,7 +139,7 @@ const BeVolunteer = () => {
                 type="text"
                 placeholder="Status"
                 name="requested"
-                defaultValue={requested}
+                // defaultValue={requested}
                 readOnly
                 className="input input-bordered w-full input-primary "
               />

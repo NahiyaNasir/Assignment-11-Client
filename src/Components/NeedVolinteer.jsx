@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "./Card";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
 
 
 
@@ -8,7 +10,7 @@ const NeedVolinteer = () => {
   console.log(need)
  
   // const [search, setSearch ] = useState("");
-  // // useEffect(()=>{
+  // useEffect(()=>{
   //   const getData=async ()=>{
   //     const {data}=await axios(
   //      ` https://assigment-11-server-two.vercel.app/volunteer?search=${search}`
@@ -17,7 +19,7 @@ const NeedVolinteer = () => {
   // },[])
 
   // useEffect(()=>{
-  //   axios.get(`https://assigment-11-server-two.vercel.app/volunteer?search=${search}`,{
+  //   axios.get(`https://assigment-11-server-two.vercel.app/volunteers/search=${search}`,{
   //     withCredentials:true
   //   })
   //   .then(res=>{

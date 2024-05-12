@@ -7,9 +7,9 @@ import { useContext } from "react";
 
 const ProtectedRoute = ({children}) => {
     const {  user, loading } = useContext(AuthContext);
-  console.log(user);
+//   console.log(user);
   const location = useLocation();
-  console.log(location.pathname);
+//   console.log(location.pathname);
   if (loading) {
     return <div className="flex justify-center items-center mt-6">
      <progress className="progress w-56"></progress>
