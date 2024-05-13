@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -57,7 +58,7 @@ const Register = () => {
 
     return (
         <div className=" my-9">
-              
+              <Helmet><title>Register Page</title></Helmet>
 <div className=" flex items-center justify-center my-3">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100  border-2 border-blue-800">
           <form className="card-body" onSubmit={handleRegister}>

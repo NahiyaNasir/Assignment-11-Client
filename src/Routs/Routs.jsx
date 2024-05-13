@@ -13,6 +13,8 @@ import MyPost from "../Components/Pages/MyPost";
 import ProtectedRoute from "../Components/ProtectedRoute";
 import NeedVolunteer from "../Components/NeedVolunteer";
 import UpdateRequest from "../Components/Pages/UpdateRequest";
+import Home from "../Components/Home";
+
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,12 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
        
         children: [
+
+          {
+            path: "/",
+            element:<Home></Home> ,
+            loader:()=>fetch(`https://assigment-11-server-two.vercel.app/volunteer`)
+          },
           {
             path: "login",
             element:<Login></Login> ,
@@ -56,9 +64,14 @@ const router = createBrowserRouter([
           },
           {
             path: "/update/:id",
-            element:<UpdateRequest></UpdateRequest> ,
+            element:<ProtectedRoute><UpdateRequest></UpdateRequest></ProtectedRoute> ,
             loader:({params})=>fetch(`https://assigment-11-server-two.vercel.app/volunteer/${params.id}`)
           },
+          // {
+          //   path: "/requested-volunteer",
+          //   element:<ProtectedRoute><RequestPost></RequestPost></ProtectedRoute> ,
+          //   loader:()=>fetch('https://assigment-11-server-two.vercel.app/requested-volunteer')
+          // },
         ],
       },
   ]);

@@ -11,7 +11,7 @@ const Card = ({i}) => {
 
 
     return (
-        <div>
+        <div className="my-10">
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
 	
 	<div>

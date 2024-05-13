@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -52,6 +53,9 @@ const Login = () => {
       };
     return (
         <div className=" my-6">
+          <div>
+            <Helmet><title>Login Page</title></Helmet>
+          </div>
          <div className=" flex items-center justify-center my-6">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-2 border-teal-500">
           <form className="card-body" onSubmit={handleLogin}>
