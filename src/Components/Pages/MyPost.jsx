@@ -1,6 +1,7 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import NeedPost from "../NeedPost";
+import RequestPost from "../RequestPost";
 
 const MyPost = () => {
     return (
@@ -8,14 +9,14 @@ const MyPost = () => {
              <Tabs>
     <TabList>
       <Tab>My Need Volunteer Post</Tab>
-      <Tab>My Volunteer Request Post</Tab>
+      <Tab> Volunteers Request Post</Tab>
     </TabList>
 
     <TabPanel>
       <NeedPost></NeedPost>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+    <RequestPost></RequestPost>
     </TabPanel>
   </Tabs>
         </div>

@@ -58,6 +58,7 @@ const AddPost = () => {
 
   return (
     <div>
+      
       <div className="p-24 glass my-6 mx-auto font-mono  " >
         
 
@@ -87,6 +88,7 @@ const AddPost = () => {
                 readOnly
                 name="email"
                 defaultValue={user?.email}
+                
                 className="input input-bordered w-full input-accent"
               />
             </label>
@@ -183,7 +185,9 @@ const AddPost = () => {
           </div>
 
           <input type="submit" value="Add " className="btn btn-block  input-success " />
+         
         </form>
+      
       </div>
     </div>
   );

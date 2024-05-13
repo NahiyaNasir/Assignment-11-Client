@@ -30,7 +30,7 @@ const Navbar = () => {
      <li>
        <details>
          <summary>My Profile</summary>
-         <ul className="p-2 text-white bg-slate-900 z-50">
+         <ul className="p-2 text-white bg-slate-900 z-[50]">
            <li><a>Add Volunteer</a></li>
            <li><a>My Post</a></li>
          </ul>
@@ -73,7 +73,7 @@ const Navbar = () => {
       <li>
         <details>
           <summary>My Profile</summary>
-          <ul className="p-2">
+          <ul className="p-2 z-[50]">
            
            <li>
            <NavLink

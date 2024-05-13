@@ -12,13 +12,13 @@ const BeVolunteer = () => {
     const {desc,title,img,deadline,location,category,number}=be
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
-    console.log(user)
+    // console.log(user)
    const  handleRequested=e=>{
     e.preventDefault();
     const from = e.target;
 
-    const name = from.name.value;
-    const email = from.email.value;
+    const name = user?.displayName;
+    const email = user?.email
     const category = from.category.value;
     const location = from.location.value;
     const deadline = from.deadline.value;
@@ -137,7 +137,7 @@ const BeVolunteer = () => {
               </div>
               <input
                 type="text"
-                placeholder="Status"
+                placeholder="requested"
                 name="requested"
                 // defaultValue={requested}
                 readOnly
@@ -175,7 +175,7 @@ const BeVolunteer = () => {
                 type="text"
                 placeholder="Organizer"
                 name="name"
-                defaultValue={user?.displayName}
+                value={user?.displayName}
                 readOnly
                 className="input input-bordered w-full input-primary "
               />
@@ -240,7 +240,7 @@ const BeVolunteer = () => {
             </label>
     <label className="form-control w-full">
         <div className="label">
-                <span className="label-text"> </span>
+                <span className="label-text"> Volunteer Quantity </span>
               </div>
               <input
                 type="number"

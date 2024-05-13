@@ -3,11 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import { Link } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
-
+import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 const NeedPost = () => {
   const [needPost, setNeedPost] = useState([]);
   const { user } = useContext(AuthContext);
-  console.log(user);
+  //   console.log(user);
   useEffect(() => {
     if (user?.email) {
       axios
@@ -15,20 +16,52 @@ const NeedPost = () => {
           `https://assigment-11-server-two.vercel.app/my-volunteer-email?email=${user?.email}`
         )
         .then((res) => {
-          console.log(res.data);
+          //   console.log(res.data);
           setNeedPost(res.data);
         });
     }
   }, [user?.email]);
 
-  //    if(user?.email){
-  //         //  fetch(`https://assigment-11-server-two.vercel.app/my-volunteer-email/${user?.email}`)
-  //         //  .then(res=>res.json())
-  //         //  .then(data=>{
-  //         //     console.log(data)
-  //         //     setNeedPost(needPost)
-  //         //  })
-  //    }
+  const handleDelete = (_id) => {
+    // console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(
+            `https://assigment-11-server-two.vercel.app/delete-single-volunteer/${_id}`
+          )
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              fetch(
+                `https://assigment-10-server-rho.vercel.app/my-volunteer-email?email=${user?.email}`
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                });
+              // axios.get(`https://assigment-10-server-rho.vercel.app/my-volunteer-email?email=${user?.email}`)
+              // .then(res=>{
+              // 	console.log(res.data)
+              // })
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -70,8 +103,11 @@ const NeedPost = () => {
                       </button>
                     </Link>
                   </td>
-                  <td className="p-3 text-right">
-                    <span className="px-3 py-1 font-semibold rounded-md bg-violet-400 text-gray-900"></span>
+                  <td className="p-3 ">
+                    <button onClick={() => handleDelete(n._id)}>
+                      {" "}
+                      <MdDelete className="text-xl" />
+                    </button>
                   </td>
                 </tr>
               ))}
