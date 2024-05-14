@@ -5,11 +5,12 @@ import { AuthContext } from "../AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const BeVolunteer = () => {
     const be=useLoaderData()
     // console.log(be)
-    const {desc,title,img,deadline,location,category,number}=be
+    const {desc,title,img,deadline,location,category,number,_id}=be
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
     // console.log(user)
@@ -55,12 +56,22 @@ const BeVolunteer = () => {
     .then(data=>{
         console.log(data)
         if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Requested Successfully",
-            icon: "success",
-            confirmButtonText: "Okay",
-          });
+            // Swal.fire({
+            //   title: "Success!",
+            //   text: "Requested Successfully",
+            //   icon: "success",
+            //   confirmButtonText: "Okay",
+            // });
+            axios.patch(`https://assigment-11-server-two.vercel.app/requested-volunteer-inc/${_id}`)
+            .then(res=>{
+              console.log(res.data)
+            })
+            Swal.fire({
+              title: "Success!",
+              text: "Requested Successfully",
+              icon: "success",
+              confirmButtonText: "Okay",
+            });
         }
     })
 

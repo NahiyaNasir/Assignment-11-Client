@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const VolunteerNow = ({vn}) => {
     // console.log(vn)
     // eslint-disable-next-line no-unused-vars
-    const {img,deadline,title, category,}=vn
+    const {img,deadline,title, category,_id}=vn
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 hover:bg-sky-300 shadow-xl bg-base-100 border border-stone-700">
   <figure className="px-10 pt-10">
     <img src={img} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -17,7 +19,9 @@ const VolunteerNow = ({vn}) => {
 
     <p className="uppercase font-serif">{category}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+     <Link to={`/details/${_id}`}>
+     <button className="btn glass bg-teal-100">View Details</button>
+     </Link>
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
   const details = useLoaderData();
-  console.log(details);
+  // console.log(details);
   const {
     img,
     desc,
@@ -19,7 +19,7 @@ const Details = () => {
 
   return (
     <div className="my-10">
-      <h4>{details?.title}</h4>
+     
       <section className="bg-gray-800 text-gray-100">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <a
@@ -33,11 +33,12 @@ const Details = () => {
               className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 bg-gray-500"
             />
             <div className="p-6 space-y-2 lg:col-span-5">
-              <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
-                {title}
+            
+              <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline text-sky-300">
+              Post Title      <br />     {title}
               </h3>
               <h3 className="text-2xl font-semibold sm:text-4xl  uppercase">
-                {category}
+         Category:{category}
               </h3>
               <h3 className="text-2xl font-semibold sm:text-4xl ">
                 {location}
@@ -52,7 +53,7 @@ const Details = () => {
               <p>{desc}.</p>
               <div className="flex justify-end">
                 <Link to={`/beVolunteer/${_id}`}>
-                  <button className="btn">Be A Volunteer</button>
+                  <button className="btn btn-info">Be A Volunteer</button>
                 </Link> 
             
 

@@ -1,13 +1,21 @@
 import { Link, useLoaderData } from "react-router-dom";
 import VolunteerNow from "./VolunteerNow";
 import { CiCircleChevRight } from "react-icons/ci";
+import { useEffect, } from "react";
+import Banner from "./Pages/Banner";
 
 const Home = () => {
   const volunteerNow = useLoaderData();
+  // const[newDeadline,setNewDeadline]=useState(volunteerNow)
+
   // console.log(volunteerNow)
+ useEffect(()=>{},[])
   return (
     <div>
-      <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+      <div>
+        <Banner></Banner>
+      </div>
+      <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-10 my-11">
         {volunteerNow.slice(0, 6).map((vn) => (
           <VolunteerNow key={vn._id} vn={vn}></VolunteerNow>
         ))}
