@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 const AddPost = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date().getTime());
   const { user } = useContext(AuthContext);
   const handleAddItem = (e) => {
     e.preventDefault();
@@ -15,6 +15,9 @@ const AddPost = () => {
     const category = from.category.value;
     const location = from.location.value;
     const deadline = from.deadline.value;
+    const deadlineDate= new Date(deadline).getTime(); 
+    const deadlineString = new Date(deadline).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })
+
     const img = from.img.value;
     const desc = from.desc.value;
     const title = from.title.value;
@@ -25,7 +28,8 @@ const AddPost = () => {
       email,
       category,
       location,
-      deadline ,
+      deadlineDate,
+      deadline: deadlineString,
       img,
       title,
       desc,
@@ -194,3 +198,18 @@ const AddPost = () => {
 };
 
 export default AddPost;
+new Date(1715757902844)
+// function convertMillisecondsToDate(milliseconds) {
+//     // Create a new Date object with the milliseconds
+//     var date = new Date(milliseconds);
+
+//     // Extract day, month, and year
+//     var day = date.getDate();
+//     var month = date.getMonth() + 1; // Months are zero indexed, so add 1
+//     var year = date.getFullYear();
+
+//     // Format the date string
+//     var dateString = day + ':' + month + ':' + year;
+
+//     return dateString;
+// }

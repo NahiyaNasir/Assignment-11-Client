@@ -21,7 +21,7 @@ const RequestPost = () => {
     }
   }, [user?.email]);
   const handleCancel = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You Want To cancel Request.",

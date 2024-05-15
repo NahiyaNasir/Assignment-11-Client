@@ -1,22 +1,32 @@
 import { Link, useLoaderData } from "react-router-dom";
 import VolunteerNow from "./VolunteerNow";
 import { CiCircleChevRight } from "react-icons/ci";
-import { useEffect, } from "react";
+import { useEffect, useState } from "react";
 import Banner from "./Pages/Banner";
+import OurVolunteer from "./OurVolunteer";
+import axios from "axios";
 
 const Home = () => {
   const volunteerNow = useLoaderData();
   // const[newDeadline,setNewDeadline]=useState(volunteerNow)
 
   // console.log(volunteerNow)
- useEffect(()=>{},[])
+  const [sort, setSort] = useState(volunteerNow);
+  useEffect(() => {
+    axios.get(
+      `https://assigment-11-server-two.vercel.app/volunteer-upComing-deadline?sort=1`
+    ).then(res=>{
+      console.log(res.data)
+      setSort(res.data)
+    })
+  }, []);
   return (
     <div>
       <div>
         <Banner></Banner>
       </div>
       <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-10 my-11">
-        {volunteerNow.slice(0, 6).map((vn) => (
+        {sort.slice(0, 6).map((vn) => (
           <VolunteerNow key={vn._id} vn={vn}></VolunteerNow>
         ))}
       </div>
@@ -26,6 +36,9 @@ const Home = () => {
             See All <CiCircleChevRight className="text-xl" />
           </button>
         </Link>
+      </div>
+      <div className=" my-10">
+        <OurVolunteer></OurVolunteer>
       </div>
     </div>
   );

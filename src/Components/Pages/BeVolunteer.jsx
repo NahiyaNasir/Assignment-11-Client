@@ -9,7 +9,9 @@ import axios from "axios";
 
 const BeVolunteer = () => {
     const be=useLoaderData()
-    // console.log(be)
+    console.log(be)
+    // const[beVolunteer,setBeVolunteer]=useState(be)
+    // console.log(beVolunteer)
     const {desc,title,img,deadline,location,category,number,_id}=be
     const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
@@ -22,7 +24,7 @@ const BeVolunteer = () => {
     const email = user?.email
     const category = from.category.value;
     const location = from.location.value;
-    const deadline = from.deadline.value;
+    const deadline =from.deadline.value;
     const img = from.img.value;
     const desc = from.desc.value;
     const title = from.title.value;
@@ -62,9 +64,10 @@ const BeVolunteer = () => {
             //   icon: "success",
             //   confirmButtonText: "Okay",
             // });
-            axios.patch(`https://assigment-11-server-two.vercel.app/requested-volunteer-inc/${_id}`)
+            axios.put(`https://assigment-11-server-two.vercel.app/requested-volunteer-inc/${_id}`)
             .then(res=>{
               console.log(res.data)
+          
             })
             Swal.fire({
               title: "Success!",

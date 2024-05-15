@@ -10,9 +10,11 @@ const Banner = () => {
 		</svg>
 	</button>
 	<div className="flex items-center justify-start w-full h-full gap-6 py-4 mx-auto overflow-auto lg:gap-8">
+		
 		<div className="relative flex flex-shrink-0 w-full sm:w-auto">
 			<img className="object-cover object-center bg-gray-500 h-96 aspect-square" src="https://source.unsplash.com/random/240x360/?1" alt="Image 1" />
 		</div>
+
 		<div className="relative flex flex-shrink-0 w-full sm:w-auto">
 			<img className="object-cover object-center bg-gray-500 h-96 aspect-square" src="https://source.unsplash.com/random/240x360/?2" alt="Image 2" />
 		</div>
