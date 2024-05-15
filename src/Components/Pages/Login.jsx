@@ -1,4 +1,4 @@
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,7 +24,7 @@ const Login = () => {
         signIn(email, password)
           .then((result) => {
             console.log(result.user);
-            Navigate( location?.state?  location.state :'/')
+            navigate( location?.state?  location.state :'/')
        
           Swal.fire({
             title: 'Success!',
