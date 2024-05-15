@@ -2,9 +2,11 @@ import { Link, useLoaderData } from "react-router-dom";
 import VolunteerNow from "./VolunteerNow";
 import { CiCircleChevRight } from "react-icons/ci";
 import { useEffect, useState } from "react";
-import Banner from "./Pages/Banner";
-import OurVolunteer from "./OurVolunteer";
+
+
 import axios from "axios";
+import Slider from "./Slider";
+import Faq from "./Faq";
 
 const Home = () => {
   const volunteerNow = useLoaderData();
@@ -22,8 +24,8 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <div>
-        <Banner></Banner>
+      <div className="my-10 ">
+      <Slider></Slider>
       </div>
       <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-10 my-11">
         {sort.slice(0, 6).map((vn) => (
@@ -38,7 +40,7 @@ const Home = () => {
         </Link>
       </div>
       <div className=" my-10">
-        <OurVolunteer></OurVolunteer>
+    <Faq></Faq>
       </div>
     </div>
   );

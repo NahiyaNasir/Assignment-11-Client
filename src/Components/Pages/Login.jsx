@@ -57,7 +57,8 @@ const Login = () => {
             <Helmet><title>Login Page</title></Helmet>
           </div>
          <div className=" flex items-center justify-center my-6">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-2 border-teal-500">
+          <img src="https://i.ibb.co/SNCgnJX/tablet-login-concept-illustration-114360-7883.jpg" alt="" />
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border-2 border-yellow-400">
           <form className="card-body" onSubmit={handleLogin}>
             <h1 className="text-2xl"> Welcome Again!</h1>
             <div className="form-control">
@@ -88,7 +89,7 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-info">Login</button>
+              <button className="btn bg-purple-200">Login</button>
             </div>
             <div className="divider"> Continue With Social accounts </div>
             <button className=" btn btn-outline" onClick={handelGoogleSignIn}>
@@ -100,7 +101,7 @@ const Login = () => {
           <p className="mx-10 mb-3">
             Need to register? Click{" "}
             <Link to="/register">
-              <span className="underline text-orange-400">Here</span>
+              <span className="underline text-orange-400">Sign Up</span>
             </Link>
           </p>
         </div>

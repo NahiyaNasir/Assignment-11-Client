@@ -60,7 +60,8 @@ const Register = () => {
         <div className=" my-9">
               <Helmet><title>Register Page</title></Helmet>
 <div className=" flex items-center justify-center my-3">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100  border-2 border-blue-800">
+  <img src="https://i.ibb.co/qRfWfMb/sign-up-concept-illustration-114360-7895.jpg" alt="" />
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100  border-2 ">
           <form className="card-body" onSubmit={handleRegister}>
             <h1 className="text-2xl"> Please Register</h1>
             <div className="form-control">
@@ -112,14 +113,14 @@ const Register = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-accent">Register</button>
+              <button className="btn bg-sky-200">Register</button>
             </div>
           </form>
 
           <p className="mx-10 mb-5">
             Already have an account? To login, click{" "}
             <Link to="/login">
-              <span className="underline text-teal-400">Here</span>
+              <span className="underline text-teal-400">Sign In</span>
             </Link>
           </p>
           {/* {registerError && (
