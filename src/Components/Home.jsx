@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "./Slider";
 import Faq from "./Faq";
+import GetUpdate from "./GetUpdate";
 
 const Home = () => {
   const volunteerNow = useLoaderData();
@@ -18,7 +19,7 @@ const Home = () => {
     axios.get(
       `https://assigment-11-server-two.vercel.app/volunteer-upComing-deadline?sort=1`
     ).then(res=>{
-      console.log(res.data)
+      // console.log(res.data)
       setSort(res.data)
     })
   }, []);
@@ -41,6 +42,9 @@ const Home = () => {
       </div>
       <div className=" my-10">
     <Faq></Faq>
+      </div>
+      <div className=" my-12">
+        <GetUpdate></GetUpdate>
       </div>
     </div>
   );

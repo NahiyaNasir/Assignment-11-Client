@@ -268,7 +268,7 @@ const BeVolunteer = () => {
     </div>
       
      
-            <input type="submit" value="Requested " className="btn btn-wide input-success my-5 " />
+            <input type="submit" value="Requested " className="btn btn-wide input-success  my-6 mb-5 flex justify-center items-center " />
        </form>
         </div>
     );
