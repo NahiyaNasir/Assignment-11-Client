@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
@@ -19,7 +20,7 @@ const Details = () => {
 
   return (
     <div className="my-10">
-     
+       <Helmet><title>  Details Page</title></Helmet>
       <section className="bg-gray-800 text-gray-100">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <a

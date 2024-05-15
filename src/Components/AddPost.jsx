@@ -3,6 +3,7 @@ import { AuthContext } from "./AuthProvider";
 import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Helmet } from "react-helmet-async";
 const AddPost = () => {
   const [startDate, setStartDate] = useState(new Date().getTime());
   const { user } = useContext(AuthContext);
@@ -49,7 +50,7 @@ const AddPost = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Added Item Successfully",
+            text: "Added Successfully",
             icon: "success",
             confirmButtonText: "Okay",
           });
@@ -62,7 +63,7 @@ const AddPost = () => {
 
   return (
     <div>
-      
+        <Helmet><title> Add Volunteer</title></Helmet>
       <div className="p-24 glass my-6 mx-auto font-mono  " >
         
 

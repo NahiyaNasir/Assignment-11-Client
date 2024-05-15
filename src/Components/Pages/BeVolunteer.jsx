@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const BeVolunteer = () => {
     const be=useLoaderData()
@@ -84,9 +85,7 @@ const BeVolunteer = () => {
 
     return (
         <div className=" my-10 bg-blue-300">
-            <div>
-           
-            </div>
+              <Helmet><title> Be Volunteer</title></Helmet>
        <form onSubmit={handleRequested}>
         <label className="form-control w-full">
         <div className="label">

@@ -54,7 +54,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/beVolunteer/:id",
-            element:<BeVolunteer></BeVolunteer> ,
+            element:<ProtectedRoute><BeVolunteer></BeVolunteer></ProtectedRoute> ,
             loader:({params})=>fetch(`https://assigment-11-server-two.vercel.app/volunteer/${params.id}`)
            
           },
