@@ -20,7 +20,7 @@ const VolunteerNow = ({vn}) => {
     <p className="uppercase font-serif">{category}</p>
     <div className="card-actions">
      <Link to={`/details/${_id}`}>
-     <button className="btn glass bg-teal-100">View Details</button>
+     <button className="btn text-black bg-teal-100">View Details</button>
      </Link>
     </div>
   </div>

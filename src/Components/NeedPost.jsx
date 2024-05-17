@@ -42,7 +42,7 @@ const NeedPost = () => {
             `https://assigment-11-server-two.vercel.app/delete-single-volunteer/${_id}`
           )
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",

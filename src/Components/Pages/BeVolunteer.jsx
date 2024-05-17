@@ -68,6 +68,7 @@ const BeVolunteer = () => {
             axios.put(`https://assigment-11-server-two.vercel.app/requested-volunteer-inc/${_id}`)
             .then(res=>{
               console.log(res.data)
+             window.location.href = `/beVolunteer/${_id}`;
           
             })
             Swal.fire({
